@@ -1,0 +1,41 @@
+{
+  "name": "movie-search",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run prod",
+    "server": "babel-node ./src/bin/www",
+    "dev": "set NODE_ENV=development & npm-run-all server",
+    "clean": "rimraf build",
+    "build": "babel ./src --out-dir build",
+    "prod": "set NODE_ENV=production & npm-run-all clean build server",
+    "watch": "nodemon"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.0"
+  },
+  "description": "Cinephile Central was created to serve as a one-stop shop for all movie fans. Users can discover an endless variety of movies and reviews from top critics. Cinephile Central also streamlines the process of finding movies, by providing reliable video links. Our mission is to encourage movie fans to discover new films beyond the limited catalogs of services like Netflix and Hulu.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mercyfulsin/Movie-Search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mercyfulsin/Movie-Search/issues"
+  },
+  "homepage": "https://github.com/Mercyfulsin/Movie-Search#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4"
+  }
+}
