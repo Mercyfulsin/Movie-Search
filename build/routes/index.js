@@ -5,18 +5,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _express = _interopRequireDefault(require("express"));
+var _require = require("path"),
+    join = _require.join;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var router = require("express").Router();
 
-var router = _express["default"].Router();
-/* GET home page. */
+var apiRoutes = require("./api");
+
+var htmlRoutes = require("./html"); // API Routes
 
 
-router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Express'
-  });
+router.use("/api", apiRoutes);
+router.use("/", htmlRoutes); // If no API routes are hit, send the React app
+
+router.use(function (req, res) {
+  console.log(join(__dirname, "../../build/index.html"));
+  res.sendFile(join(__dirname, "../../build/index.html"));
 });
 var _default = router;
 exports["default"] = _default;

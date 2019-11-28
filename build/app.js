@@ -13,7 +13,7 @@ var _cookieParser = _interopRequireDefault(require("cookie-parser"));
 
 var _morgan = _interopRequireDefault(require("morgan"));
 
-var _index = _interopRequireDefault(require("./routes/index"));
+var _routes = _interopRequireDefault(require("./routes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -25,6 +25,6 @@ app.use(_express["default"].urlencoded({
 }));
 app.use((0, _cookieParser["default"])());
 app.use(_express["default"]["static"]((0, _path.join)(__dirname, '../public')));
-app.use('/', _index["default"]);
+app.use(_routes["default"]);
 var _default = app;
 exports["default"] = _default;
