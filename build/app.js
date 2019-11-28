@@ -25,6 +25,7 @@ app.use(_express["default"].urlencoded({
 }));
 app.use((0, _cookieParser["default"])());
 app.use(_express["default"]["static"]((0, _path.join)(__dirname, '../public')));
+console.log("What", _express["default"]["static"]((0, _path.join)(__dirname, '../public')));
 app.use(_routes["default"]);
 var _default = app;
 exports["default"] = _default;
